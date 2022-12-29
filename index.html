@@ -1,0 +1,49 @@
+<html>
+
+<head>
+     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <!-- <div
+    x-cloak
+    x-data="{teams: [], 'isLoading': true}"
+    x-init="fetch('https://api-jessedierckx.cloud.okteto.net/player', { mode: 'no-cors', method: 'GET' })
+    .then(response => response.json())
+    .then(response => { teams = response.teams; isLoading = false; console.log(response.teams); });"
+> -->
+<!-- Table will go here -->
+</div>
+    <div x-data="{
+        posts: {},
+        async getDataplayer() {
+            fetch('https://api-jessedierckx.cloud.okteto.net/player', { mode: 'no-cors', method: 'GET' }).then(response => response.json));
+        }
+    }">
+        <button x-on:click="getDataplayer">Send get request for data inserted player</button>
+        Data returned: <strong x-text="posts.ranking">Placeholder</strong>
+        <strong x-text="posts.first_name">Placeholder</strong>
+        <strong x-text="posts.last_name">Placeholder</strong>
+        <strong x-text="posts.team">Placeholder</strong>
+        <strong x-text="posts.age">Placeholder</strong>
+        <strong x-text="posts.games_played">Placeholder</strong>
+        <strong x-text="posts.wins">Placeholder</strong>
+        <strong x-text="posts.losses">Placeholder</strong>
+ 
+    </div>
+    <div x-data="{
+        posts1: {},
+        async getDatateam() {
+            fetch('https://api-jessedierckx.cloud.okteto.net/team', { mode: 'no-cors', method: 'GET' }).then(response => response.json));
+        }
+    }">
+        <button x-on:click="getDatateam">Send get request for data inserted team</button>
+        Data returned: <strong x-text="posts1.ranking">Placeholder</strong>
+        <strong x-text="posts1.name">Placeholder</strong>
+        <strong x-text="posts1.games_played">Placeholder</strong>
+        <strong x-text="posts1.wins">Placeholder</strong>
+        <strong x-text="posts1.losses">Placeholder</strong>
+    </div>
+</body>
+
+</html>
